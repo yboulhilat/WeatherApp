@@ -1,0 +1,77 @@
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://use.fontawesome.com/a7ec7986bf.js"></script>
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WeatherApp | La Capsule Academy</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row logo">
+      <!-- Logo -->
+      <nav class="navbar " >
+        <a class="navbar-brand" href="/">
+          <img src="/images/logo_ WeatherApp.svg" width="auto" height="50" alt="">
+        </a>
+      </nav>
+
+    </div>
+
+  </div>
+
+
+  <div class="container-fluid">
+
+    <div class="row">
+      <!--Google map-->
+      <div id="map-container-google-1" class="z-depth-1-half map-container col-12 col-sm-12 col-lg-6 d-flex justify-content-start" style="height: 500px">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3605004.1764017805!2d0.8216044969503742!3d46.567812044214115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd54a02933785731%3A0x6bfd3f96c747d9f7!2sFrance!5e0!3m2!1sfr!2sfr!4v1560153071427!5m2!1sfr!2sfr"
+          frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+    
+      <!-- Formulaire-->
+    <div class="col-12 col-lg-6">
+        <div>
+          <form class="form-group " method="POST" action="/add-city">
+            <label class="sr-only">Rechercher une ville</label>
+            <input type="text" name="cityName" class="form-control" id="ville"
+              placeholder="Rechercher une ville, ex : Paris, Lille, Forbach..." value="">
+              <input type="hidden" name="cityIMG" >
+              <input type="hidden" name="cityDES" >
+              <input type="hidden" name="cityMin" >
+              <input type="hidden" name="cityMax" >
+              <input type="hidden" name="cityTrash">
+              <button type="submit" class="btn btn-warning">Enregistrer</button>
+          </form>
+        <!-- Boucle -->
+        <% for(var i = 0 ; i < cityList.length ; i++){ %>
+        <div>
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <h5 class="col-1"><%=cityList[i].name%></h5>
+              <span class="offset-2 col-1"> <img src="<%=cityList[i].img%>" width="auto" height="50" alt=""></span>
+              <span class="desc col-2"><%=cityList[i].desc%></span> 
+              <span class="badge badge-warning col-1" ><%=cityList[i].temp_min%>°C</span>
+              <span class="badge badge-secondary col-1" ><%=cityList[i].temp_max%>°C</span>
+        <!-- Delete -->
+              <a href="/delete-city?id=<%=cityList[i]._id%>" class="col-1"> <img src="/images/cancel.svg" width="auto" height="20" alt=""></a>
+            </ul>
+        </div>
+          <% } %>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+
+</html>

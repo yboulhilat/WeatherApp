@@ -1,0 +1,89 @@
+body {
+    background-color: rgb(251, 252, 253);
+}
+.map-container{
+overflow:hidden;
+padding-bottom:48%;
+height:0;
+
+}
+.map-container iframe{
+left:0;
+top:0;
+height:100%;
+width:100%;
+position:absolute;
+
+}
+h5 {
+  margin-bottom: 0px;
+  color: #485879;
+}
+.logo {
+
+   background-color: #2C3A59;
+    background-image: url("/images/bg.png");
+    background-size: 100%;
+    background-repeat:  no-repeat;
+    background-position: right
+
+}
+.desc {
+text-transform: capitalize;
+}
+
+.form-group {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 3rem;
+
+    
+    
+}
+
+.list-group-item:first-child {
+    background-image: url("/images/bg.svg");
+    background-size: 20%;
+    background-repeat:  no-repeat;
+}
+.list-group {
+    margin-bottom: 15px;
+
+
+} 
+.icone {
+    width: auto;
+    height: 30px;
+    color: #2C3A59;
+}
+.list-group-item:hover {
+border-color: rgb(230, 230, 230);
+background-color: rgb(255, 255, 255);
+box-shadow: 2px 2px 15px 0px rgb(238, 237, 237);
+}
+.meteo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.offset-1 {
+    margin-left: 12.333333%;
+}
+input {
+    height: 50px;
+    display: flex;
+}
+button{
+    height: 50px;
+    margin-left: 10px;
+}
+
+
+.list-group-item{
+    height: 100px;
+
+}
+
