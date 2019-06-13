@@ -7,10 +7,14 @@ padding-bottom:48%;
 height:0;
 }
 h2 {
-    margin-top: 24px;
+    margin-top: 22px;
     text-transform: capitalize;
-    font-size: 16px;
+    font-size: 14px;
     color: aliceblue;
+    display: grid;
+    line-height: 0.2;
+
+
 }
 
 

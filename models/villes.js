@@ -8,10 +8,7 @@ var villeSchema = mongoose.Schema({
     temp_max: Number,
 });
 
-module.exports = mongoose.model('villes', villeSchema);
-
-
-var villeModel = mongoose.model('cities', villeSchema);
+var villeModel = mongoose.model('villes', villeSchema);
 
 module.exports = villeModel;
 
