@@ -5,7 +5,24 @@ body {
 overflow:hidden;
 padding-bottom:48%;
 height:0;
+}
+h2 {
+    margin-top: 24px;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: aliceblue;
+}
 
+
+.bg-login {
+    background-image: url("../images/background.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.logout {
+    margin: 15px 15px 15px 15px;
+    padding-bottom: 8px;
+    padding-top: 10px;
 }
 .map-container iframe{
 left:0;
@@ -16,7 +33,6 @@ position:absolute;
 
 }
 .navbar {
-
     padding: 0rem 1rem;
 }
 h5 {
@@ -25,26 +41,34 @@ h5 {
 }
 .logo {
 
-   background-color: #2C3A59;
-    background-image: url("/images/bg.png");
-    background-size: 100%;
-    background-repeat:  no-repeat;
-    background-position: right
+    background-image: url(/images/bg.png);
+
+    background-size: contain;
 
 }
+
 .desc {
 text-transform: capitalize;
 }
-
+.dropdown-divider {
+    height: 3px;
+    margin: 1.5rem 0;
+    overflow: hidden;
+    border-top: 1px solid #e9ecef;
+}
 .form-group {
     margin-top: 15px;
     margin-bottom: 15px;
     justify-content: space-between;
     display: flex;
-    margin-bottom: 3rem;
     outline: 0;
-    
-    
+}
+
+.form-control {
+    border: 1px solid #303a5929;
+}
+.form-control:focus {
+    box-shadow: none;
 }
 
 .list-group-item:first-child {
@@ -60,18 +84,16 @@ text-transform: capitalize;
 .icone {
     width: auto;
     height: 30px;
-    color: #2C3A59;
 }
 .list-group-item:hover {
-border-color: rgb(230, 230, 230);
-background-color: rgb(255, 255, 255);
-box-shadow: 2px 2px 15px 0px rgb(238, 237, 237);
+    border-color: rgb(230, 230, 230);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 15px 0px rgb(238, 237, 237);
 }
 .meteo {
     display: flex;
     flex-direction: row;
     align-items: center;
-
 }
 .offset-1 {
     margin-left: 12.333333%;
@@ -82,9 +104,14 @@ input {
 }
 button{
     height: 50px;
-    margin-left: 10px;
+    margin-bottom: 10px;
 }
-
+.card {
+    background-color: rgb(250, 251, 255);
+    border: 0px solid;
+    min-height: 100vh;
+    padding-top: 20vh;
+}
 
 .list-group-item{
     height: 100px;
