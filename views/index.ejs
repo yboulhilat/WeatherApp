@@ -38,22 +38,28 @@
           frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
     
-      <!-- Formulaire-->
+      <!-- Formulaire pour enregistrer la ville -->
     <div class="col-12 col-lg-6">
         <div>
-          <form class="form-group " method="POST" action="/add-city">
-            <label class="sr-only">Rechercher une ville</label>
+          <form class="form-group " method="POST" action="/add-city"><!-- Lien de la route POST backend -->
             <input type="text" name="cityName" class="form-control" id="ville"
               placeholder="Rechercher une ville, ex : Paris, Lille, Forbach..." value="">
-              <input type="hidden" name="cityIMG" >
-              <input type="hidden" name="cityDES" >
-              <input type="hidden" name="cityMin" >
-              <input type="hidden" name="cityMax" >
-              <input type="hidden" name="cityTrash">
-              <button type="submit" class="btn btn-warning">Enregistrer</button>
+              <input type="hidden" name="cityIMG" > <!-- Image --> <!-- Elémentq à récupérer pour le backend -->
+              <input type="hidden" name="cityDES" > <!-- Description  --> <!-- Elémentq à récupérer pour le backend -->
+              <input type="hidden" name="cityMin" > <!-- Température minimum --> <!-- Elémentq à récupérer pour le backend -->
+              <input type="hidden" name="cityMax" > <!-- Température maxium --> <!-- Elémentq à récupérer pour le backend -->
+              <button type="submit" class="btn btn-warning">Enregistrer</button> <!-- Bouton pour enregistrer -->
           </form>
-        <!-- Boucle -->
-        <% for(var i = 0 ; i < cityList.length ; i++){ %>
+
+        <%  if (cityList.length == 0) {%>
+            <div>
+              <img src="/images/bg1.svg" width="auto" height="auto" alt="">
+            </div>
+        <%  } else {
+          for(var i = 0 ; i < cityList.length ; i++){ %>
+
+        <!-- Début de la boucle -->
+        
         <div>
           <ul class="list-group">
             <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -66,7 +72,9 @@
               <a href="/delete-city?id=<%=cityList[i]._id%>" class="col-1"> <img src="/images/cancel.svg" width="auto" height="20" alt=""></a>
             </ul>
         </div>
+          <%     } %>
           <% } %>
+        <!-- Fin de la boucle -->
       </div>
 
     </div>

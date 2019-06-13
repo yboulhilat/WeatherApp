@@ -134,6 +134,7 @@ var villeModel = mongoose.model('villes', villeSchema);
 
 ////////////* Accueil *////////////
 router.get('/', function(req, res, next) {
+
   villeModel.find(
     function (err, villes) {
       console.log(villes);
@@ -149,9 +150,12 @@ router.post('/add-city', function (req, res, next) {
     body = JSON.parse(body);
 
     if (body.cod == '404' || body.cod == '400') {
-      res.render('index', { cityList : villes });
+      villeModel.find(
+        function (err, villes) {
+          console.log(villes);
+          res.render('index', { cityList: villes });
+        });
     } else {
-
       //////////////////////// Enregistre un document 1. préparation des données
       var newVille = new villeModel({
         name: req.body.cityName,
