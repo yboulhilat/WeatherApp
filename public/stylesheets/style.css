@@ -34,7 +34,6 @@ top:0;
 height:100%;
 width:100%;
 position:absolute;
-
 }
 .navbar {
     padding: 0rem 1rem;
@@ -120,5 +119,10 @@ button{
 .list-group-item{
     height: 100px;
 
+}
+
+#MapsWorld {
+  height: 100vh; 
+ background-color: #e0e0e0;
 }
 

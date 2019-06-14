@@ -32,7 +32,7 @@ router.get('/villes', function (req, res, next) {
 router.post('/add-city', function (req, res, next) {
   request("http://api.openweathermap.org/data/2.5/weather?q=" + req.body.cityName + "&lang=fr&units=metric&APPID=d01a1dce408a9f8ce796d48b9e88897d", function (error, response, body) {
     body = JSON.parse(body);
-
+    console.log(body);
     if (body.cod == '404' || body.cod == '400') {
       villeModel.find(
         function (err, villes) {
@@ -47,6 +47,8 @@ router.post('/add-city', function (req, res, next) {
         img: "http://openweathermap.org/img/w/" + body.weather[0].icon + ".png",
         temp_min: Math.round(body.main.temp_min),
         temp_max: Math.round(body.main.temp_max),
+        lat: body.coord.lat,
+        lng: body.coord.lon,
       });
 
       //////////////////////// Ecrire la données

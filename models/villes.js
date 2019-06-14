@@ -6,7 +6,11 @@ var villeSchema = mongoose.Schema({
     img: String,
     temp_min: Number,
     temp_max: Number,
+    lat: Number,
+    lng: Number,
 });
+
+
 
 var villeModel = mongoose.model('villes', villeSchema);
 
