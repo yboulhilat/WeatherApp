@@ -19,7 +19,7 @@ var customIcon = L.icon({
 var gps = document.getElementsByClassName('list-group');
 
 for (var i = 0; i < gps.length; i++) {
-    L.marker([gps[i].dataset.lat, gps[i].dataset.lng], { icon: customIcon }).bindPopup(gps[i].dataset.lat, gps[i].dataset.lng).addTo(MyMaps);
+    L.marker([gps[i].dataset.lat, gps[i].dataset.lng], { icon: customIcon }).bindPopup(gps[i].dataset.name).addTo(MyMaps);
 }
 
 
